@@ -1,0 +1,23 @@
+{
+  "name": "micro-front-qiankun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "iall": "pnpm base:install && pnpm app1:install && pnpm app2:install",
+    "start:all": "npm-run-all --parallel start:*",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "base:install": "cd base && pnpm i",
+    "app1:install": "cd app1 && pnpm i",
+    "app2:install": "cd app2 && pnpm i",
+    "start:base": "cd base && pnpm start",
+    "start:app1": "cd app1 && pnpm start",
+    "start:app2": "cd app2 && pnpm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
