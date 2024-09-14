@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Outlet } from "react-router-dom";
 import { PageContainer, ProCard, ProLayout } from '@ant-design/pro-components';
 import useRoute from '@/hooks/useRoute';
-// import Img from '@/utils/img'
 import { menuList } from '@/routes';
 import MyHeader from './Header';
 

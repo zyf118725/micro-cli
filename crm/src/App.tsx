@@ -5,8 +5,10 @@ function App() {
   const a = 1;
   return (
     <div className='page'>
+      我是react-App3
       <Home />
       <button onClick={testfn}>testfn</button>
+
     </div>
   );
 }

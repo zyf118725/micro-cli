@@ -33,7 +33,6 @@ module.exports = merge(base, {
       // 作用：页面上不会黑框提示警告，只在控制台显示
       overlay: { errors: true, warnings: false, },
     },
-    headers: { "Access-Control-Allow-Origin": "*" },
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // react热更新

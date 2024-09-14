@@ -11,14 +11,13 @@ const apps: any[] = [
     entry: '//localhost:3345',
     container: '#app1',
     activeRule: '/app1',
-    // loader,
     props: { myName: 'baes张三' }
   },
   {
-    name: 'vue app',
+    name: 'crm',
     entry: '//localhost:3346',
-    container: '#app2',
-    activeRule: '/app2',
+    container: '#crm',
+    activeRule: '/crm',
   },
 ];
 

@@ -12,6 +12,11 @@ module.exports = merge(base, {
     hot: true, // 热更新
     historyApiFallback: true, // 解决history路由404问题
     compress: false, // gzip压缩,开发环境不开启，提升热更新速度
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Headers': '*',
+    },
     // 处理跨域
     proxy: {
       '/api': {
@@ -28,7 +33,6 @@ module.exports = merge(base, {
       // 作用：页面上不会黑框提示警告，只在控制台显示
       overlay: { errors: true, warnings: false, },
     },
-    headers: { "Access-Control-Allow-Origin": "*" },
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // react热更新

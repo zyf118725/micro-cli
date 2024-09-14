@@ -19,7 +19,7 @@ export default function AppRoute() {
           ))}
           <Route path='/app' element={MySuspense(<App />)} />
           <Route path='/app1/*' element={MySuspense(<App />)} />
-          <Route path='/app2/*' element={MySuspense(<App />)} />
+          <Route path='/crm/*' element={MySuspense(<App />)} />
         </Route>
       </Routes>
     </Router>

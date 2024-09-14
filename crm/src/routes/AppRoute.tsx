@@ -8,28 +8,18 @@ export default function AppRoute() {
 
   useEffect(() => { }, []);
   return (
-    <Router basename={window.__POWERED_BY_QIANKUN__ ? '/app2' : '/'}>
+    <Router basename={window?.__POWERED_BY_QIANKUN__ ? '/crm' : '/'}>
       <Suspense>
-        <Routes >
+        <Routes>
           <Route path="/" element={<Navigate to={routerConfig?.defaultRoute} replace />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />} >
             {routes.map((item: any, i: number) => (
-              <Route
-                key={i}
-                path={item.path}
-                element={
-                  <Suspense
-                  // fallback={<p>loading...</p>}
-                  >
-                    <item.element />
-                  </Suspense>
-                }
-              />
+              <Route key={i} path={item.path} element={<Suspense><item.element /></Suspense>} />
             ))}
           </Route>
         </Routes>
       </Suspense>
-    </Router >
+    </Router>
   );
 }

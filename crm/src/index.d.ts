@@ -11,3 +11,9 @@ declare module '*.module.less' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+// declare global {
+//   interface Window {
+//     __POWERED_BY_QIANKUN__: boolean
+//   }
+// }
+

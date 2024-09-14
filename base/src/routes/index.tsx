@@ -51,8 +51,8 @@ const allRouteList = [
     ],
   },
   {
-    path: '/app2',
-    name: 'app2系统',
+    path: '/crm',
+    name: 'crm系统',
     icon: <AppstoreOutlined />,
     hidden: false,
     children: [
