@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
+import AppRoute from '@/routes/AppRoute';
+import '@/assets/reset.less';
 import './registerApps';
-import AppRoute from '@/routes/AppRoute'; // 处理appRoute
-import './common.less'
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<AppRoute />);
 
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(< AppRoute />);

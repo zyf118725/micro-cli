@@ -4,7 +4,7 @@ import { AppstoreOutlined } from "@ant-design/icons";
 // 路由或菜单的配置项
 const routerConfig = {
   defaultRoute: '/home',
-}
+};
 
 // 配置路由和菜单列表
 const allRouteList = [
@@ -13,8 +13,23 @@ const allRouteList = [
     name: '首页',
     icon: <AppstoreOutlined />,
     hidden: false,
-    component: lazy(() => import('@/pages/Home')),
+    component: lazy(() => import('@/pages/Home/index')),
   },
+  {
+    path: '/base',
+    name: '主应用',
+    icon: <AppstoreOutlined />,
+    hidden: false,
+    children: [
+      {
+        path: '/base/system',
+        name: '系统设置',
+        hidden: false,
+        component: lazy(() => import('@/pages/System')),
+      },
+    ],
+  },
+
   {
     path: '/app1',
     name: 'app1系统',
@@ -23,46 +38,39 @@ const allRouteList = [
     children: [
       {
         path: 'home',
-        name: '首页',
+        name: 'app1首页',
         hidden: false,
         component: null,
       },
       {
-        path: 'goods',
-        name: '商品管理',
-        hidden: false,
-        component: null,
-      },
-      {
-        path: 'mymodal',
-        name: '测试modal',
-        icon: <AppstoreOutlined />,
+        path: 'goods/detail',
+        name: '商品详情',
         hidden: false,
         component: null,
       },
     ],
   },
   {
-    path: '/app2mod',
+    path: '/app2',
     name: 'app2系统',
     icon: <AppstoreOutlined />,
     hidden: false,
     children: [
       {
-        path: '/app2/home',
-        name: '首页',
+        path: 'home',
+        name: 'app2首页',
         hidden: false,
         component: null,
       },
       {
-        path: '/app2/goods',
-        name: '商品管理',
+        path: 'goods/detail',
+        name: '商品详情',
         hidden: false,
         component: null,
       },
     ],
   },
-]
+];
 
 // 生成菜单列表
 function createMenuList(list: any) {
@@ -73,11 +81,11 @@ function createMenuList(list: any) {
     if (component) obj.component = <item.component />;
     if (icon) obj.icon = icon;
     if (children && children.length > 0) {
-      createMenuList(children)
+      createMenuList(children);
       obj.routes = createMenuList(children);
     }
     arr.push(obj);
-  })
+  });
   return arr;
 }
 
@@ -87,16 +95,16 @@ function createRoutes(list: any) {
   list.forEach((item: any) => {
     const obj: any = {
       path: item.path,
-    }
+    };
     if (item.component) {
       obj.element = item.component;
-      arr.push(obj)
+      arr.push(obj);
     }
     if (item.children) {
-      arr.push(...createRoutes(item.children))
+      arr.push(...createRoutes(item.children));
     };
-  })
-  return arr
+  });
+  return arr;
 }
 
 const menuList = createMenuList(allRouteList);

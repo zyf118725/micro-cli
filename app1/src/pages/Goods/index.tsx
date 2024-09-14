@@ -1,7 +1,5 @@
-import { Card } from 'antd'
-
-export default function index() {
+export default function Goods() {
   return (
-    <Card>我是app1的商品模块</Card>
-  )
+    <div>Goods</div>
+  );
 }

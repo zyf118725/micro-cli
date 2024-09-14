@@ -1,8 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import '@/assets/reset.less';
+import './public-path';
 import AppRoute from '@/routes/AppRoute';
-import './public-path'
+
 
 let root: any = null;
 function render(props: any) {

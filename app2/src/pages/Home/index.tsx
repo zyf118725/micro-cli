@@ -1,7 +1,10 @@
-import { Card } from 'antd';
+import { Card } from "antd";
 
 export default function Home() {
+
   return (
-    <Card>我是app2的首页</Card>
-  )
+    <Card>
+      <h1>我是APP2首页</h1>
+    </Card>
+  );
 }

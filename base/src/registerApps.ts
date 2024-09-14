@@ -5,29 +5,29 @@ const loader = (loading: any) => {
 };
 
 // 要加载的子应用的列表
-const apps = [
+const apps: any[] = [
   {
     name: 'react app', // app name registered
-    entry: '//localhost:3001',
+    entry: '//localhost:3345',
     container: '#app1',
     activeRule: '/app1',
-    loader
+    // loader,
+    props: { myName: 'baes张三' }
   },
   {
-    name: 'reactapp2', // app name registered
-    entry: '//localhost:3002',
+    name: 'vue app',
+    entry: '//localhost:3346',
     container: '#app2',
     activeRule: '/app2',
-    loader
   },
 ];
 
 // 2.注册子应用，第二个参数是乾坤的声明周期
 registerMicroApps(apps,
   {
-    beforeLoad: [async (app) => { console.log('加载前', app.name); }],
-    beforeMount: [async (app) => { console.log('挂载前', app.name); }],
-    afterMount: [async (app) => { console.log('挂载后', app.name); }],
+    beforeLoad: [async (app: any) => { console.log('加载前', app.name); }],
+    beforeMount: [async (app: any) => { console.log('挂载前', app.name); }],
+    afterMount: [async (app: any) => { console.log('挂载后', app.name); }],
   }
 );
 

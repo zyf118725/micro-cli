@@ -1,7 +1,15 @@
-import React from 'react'
+import Home from '@/pages/Home';
+import { testfn } from '@/utils';
 
-export default function App() {
+function App() {
+  const a = 1;
   return (
-    <div>我是APP1的app页面</div>
-  )
+    <div className='page'>
+      我是react-App3
+      <Home />
+      <button onClick={testfn}>testfn</button>
+
+    </div>
+  );
 }
+export default App;
